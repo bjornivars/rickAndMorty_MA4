@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import { STRAPI_CONTACT_API } from './../components/constants/constants';
-/* import BlogPost from '../components/blog'; */
-
 
 
 export default class Contact extends Component {
@@ -17,8 +13,6 @@ export default class Contact extends Component {
         messageError: true,
 
         correctlySent: '',
-
-
     }
 
     handleChange = (input) => {
@@ -49,29 +43,19 @@ export default class Contact extends Component {
     
      handleSubmit = (event) => {
          event.preventDefault();
-         const {firstname, lastname, email, message} = this.state;
-         axios.post(STRAPI_CONTACT_API, {
-             name: firstname,
-             lastname: lastname,
-             email: email,
-             message: message
-         })
-         .then(result => {
-             console.log(result);
-             this.setState({
-                 correctlySent: 'Well done! Your message has been sent',
-             })
-         })
-         .catch(err => {
-             console.log(err);
-             this.setState({
-                 correctlySent: 'Well fuck.. Something is not right',
-             })
-         })
+         const {firstnameError, lastnameError, emailError, messageError} = this.state;
+         (!firstnameError || !lastnameError || !emailError || !messageError) ?
+         this.setState({
+            correctlySent: 'Well done! Your message has been sent',
+        }) : 
+        this.setState({
+            correctlySent: 'Something went wront.. Try again later',
+        })
+        ;
      }
  
     render() {
-        const { firstnameError, lastnameError, emailError, messageError, userName, correctlySent } = this.state;
+        const { firstnameError, lastnameError, emailError, messageError, correctlySent } = this.state;
         return (
             <div className="row mt-5">
                 <div className="col-md-5 m-auto ">
