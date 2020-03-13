@@ -13,6 +13,9 @@ export default class Dashboard extends react.Component {
         isResultsFiltered: false,
         searchPhrase: '',
 
+        userName: window.sessionStorage.getItem("user"),
+
+
     }
 
     componentDidMount(){
@@ -38,10 +41,10 @@ export default class Dashboard extends react.Component {
       }
     
   render() {
-const {allResults, filteredResults, searchPhrase, isResultsFiltered} = this.state;
+const {allResults, filteredResults, searchPhrase, isResultsFiltered, userName} = this.state;
     return (
       <div className="Component">
-        <h1 className="mb-5 pt-5">Welcome back, USERNAME</h1>
+        <h1 className="mb-5 pt-5">Welcome back, {userName}</h1>
         <form className='col-md-6 m-auto'>
             <p>Search for a Character</p>
             <input type='text'
@@ -66,6 +69,7 @@ const {allResults, filteredResults, searchPhrase, isResultsFiltered} = this.stat
                             image={value.image}
                             species={value.species}
                             gender={value.gender}
+                            id={value.id}
                         />
                       }) :
                       <div>No Results</div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const CardClick = (props) => {
-    const { name, image, gender, species, status, origin } = props;
+    const { name, image, gender, species, status, origin, created } = props;
     return (
         <>
             <div className="col-md-6 mt-3 m-auto">
@@ -15,6 +15,8 @@ const CardClick = (props) => {
                         <p><b>Species:</b> {species}</p>
                         <p><b>Status:</b> {status}</p>
                         <p><b>Origin:</b> {origin}</p>
+                        <p><b>Date created:</b> {created}</p>
+
 
                     </div>
 </div>

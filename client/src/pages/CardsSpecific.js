@@ -43,6 +43,7 @@ export default class CardSpecific extends Component {
                                 species={characterResult.species}
                                 status={characterResult.status}
                                 origin={characterResult.origin.name}
+                                created={characterResult.created}
 
 
                             /> :
