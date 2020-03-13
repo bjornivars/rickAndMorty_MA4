@@ -42,9 +42,9 @@ export default class Dashboard extends react.Component {
     const { allResults, filteredResults, searchPhrase, isResultsFiltered, userName } = this.state;
     return (
       <div className="Component">
-        <h1 className="mb-5 pt-5">Welcome back, {userName}</h1>
+        <h1 className="heading">Welcome back, {userName}</h1>
         <form className='col-md-6 m-auto'>
-          <p>Search for a Character</p>
+          <p className='mt-5'>Search for a Character</p>
           <input type='text'
             name='username'
             onChange={this.handleFiltering}

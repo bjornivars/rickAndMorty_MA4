@@ -30,7 +30,7 @@ export default class CardSpecific extends Component {
         return (
             <div className="row">
                 <div className="col-sm-12">
-                    <h1 className="mb-5 pt-5 text-center">Card Specific</h1>
+                    <h1 className="heading">Card Specific</h1>
                 </div>
                 <div className="col-sm-12">
                     {

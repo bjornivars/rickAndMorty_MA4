@@ -1,4 +1,11 @@
+.heading{
+    margin-top: 4em;
+    text-align: center;
+}
 
+.whiteText{
+    color: white;
+}
 
 .noWrap{
     flex-wrap: wrap;
@@ -10,4 +17,30 @@
 
 .error{
     color: red;
+}
+
+.btn{
+    &-primary{
+        background-color: $secondary-color;
+        &:hover{
+            background-color: $secondary-color-hover;
+        }
+    }
+    &-logout{
+    background-color: $tertiary-color;
+    margin-top: 3.5em;
+    border-color: $tertiary-color;
+    &:hover{
+        background-color: $tertiary-color-hover;
+        border-color: $tertiary-color-hover;
+    }
+    }
+}
+
+
+a{
+    color: white;
+    &:hover{
+        color: white;
+    }
 }

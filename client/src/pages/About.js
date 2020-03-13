@@ -22,18 +22,25 @@ export default class Contact extends Component {
         return (
             <div className="mt-5">
                 <div className="col-md-5 m-auto ">
-                    <h1 className="mt-4 text-center">About us</h1>
+                    <h1 className="heading">About us</h1>
                 </div>
-                <div className="otherContact text-center">
-                    <p className="accordionP" onClick={(showMore !== true) ? this.handleClick : this.handleSecondClick}
-                    >Other ways to contact us</p>
-                    <ul className={(showMore !== true) ? 'd-none' : 'd-block unstyledUl'} >
-                        <li className='unstyled'>Call us: <a href="tel:+4712345678" rel="noopener noreferrer">+47 123 45 678</a></li>
-                        <li>Email: <a href="mailto:test@gmail.com" rel="noopener noreferrer">test@gmail.com</a></li>
-                        <li> Adress:
-                            <a href="https://maps.google.com/?ll=59.929970,10.755964" target='_blank' rel="noopener noreferrer">Mølleparken 4, 0459 Oslo</a>
-                        </li>
-                    </ul>
+                <div className="otherContact ">
+                    <p className="accordionP text-center" onClick={(showMore !== true) ? this.handleClick : this.handleSecondClick}
+                    >Read more about us!</p>
+                    <div className={(showMore !== true) ? 'd-none' : 'd-block unstyledUl col-md-6 m-auto'}>
+                    <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a feugiat mi. 
+                    Duis sodales metus pulvinar eros scelerisque, id cursus lacus lacinia. Quisque commodo 
+                    justo at nibh rutrum, vitae vestibulum odio rutrum. Proin eget velit purus. Aliquam erat volutpat. Integer egestas enim sit amet bibendum molestie. Donec in gravida odio.
+                    In interdum odio id urna tempus, efficitur tincidunt massa aliquam. 
+                    Praesent pharetra velit sed justo scelerisque facilisis. 
+                    </p>
+                    <p>
+                    Mauris varius nisi vitae interdum ultricies. Quisque a dui et libero lacinia sollicitudin. 
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+                    Donec faucibus vestibulum odio, ut interdum velit laoreet ac.
+                    </p>
+                    </div>
                 </div>
             </div>
         )

@@ -13,6 +13,9 @@ export default class Contact extends Component {
         messageError: true,
 
         correctlySent: '',
+
+        userName: window.sessionStorage.getItem("user"),
+
     }
 
     handleChange = (input) => {
@@ -54,11 +57,11 @@ export default class Contact extends Component {
     }
 
     render() {
-        const { firstnameError, lastnameError, emailError, messageError, correctlySent } = this.state;
+        const { firstnameError, lastnameError, emailError, messageError, correctlySent, userName } = this.state;
         return (
             <div className="row mt-5">
                 <div className="col-md-5 m-auto ">
-                    <h1 className="mt-4">Please contact us, USERNAME</h1>
+                    <h1 className="heading">Please contact us, {userName}</h1>
                     <form className='mt-5' onSubmit={this.handleSubmit}>
                         <h2 className='mb-4'>Contact form</h2>
                         <p>Firstname</p>
