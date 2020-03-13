@@ -6,7 +6,7 @@ import { RM_API } from './../components/constants/constants';
 import CardClick from '../components/card-specific';
 
 export default class CardSpecific extends Component {
-     state = {
+    state = {
         characterResult: undefined,
     }
 
@@ -23,15 +23,14 @@ export default class CardSpecific extends Component {
             .catch((err) => {
                 console.log(err)
             })
-    } 
-
+    }
 
     render() {
-       const { characterResult } = this.state;
+        const { characterResult } = this.state;
         return (
             <div className="row">
                 <div className="col-sm-12">
-                <h1 className="mb-5 pt-5 text-center">Card Specific</h1>
+                    <h1 className="mb-5 pt-5 text-center">Card Specific</h1>
                 </div>
                 <div className="col-sm-12">
                     {
@@ -44,13 +43,11 @@ export default class CardSpecific extends Component {
                                 status={characterResult.status}
                                 origin={characterResult.origin.name}
                                 created={characterResult.created}
-
-
                             /> :
                             <div className="d-flex justify-content-center col-md-6">
                                 <img className='w-100' src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' alt="loading" />
                             </div>
-                    } 
+                    }
                 </div>
             </div>
         )

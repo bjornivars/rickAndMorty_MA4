@@ -40,27 +40,25 @@ export default class Contact extends Component {
             [name]: value
         })
     }
-    
-     handleSubmit = (event) => {
-         event.preventDefault();
-         const {firstnameError, lastnameError, emailError, messageError} = this.state;
-         (!firstnameError || !lastnameError || !emailError || !messageError) ?
-         this.setState({
-            correctlySent: 'Well done! Your message has been sent',
-        }) : 
-        this.setState({
-            correctlySent: 'Something went wront.. Try again later',
-        })
-        ;
-     }
- 
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        const { firstnameError, lastnameError, emailError, messageError } = this.state;
+        (!firstnameError || !lastnameError || !emailError || !messageError) ?
+            this.setState({
+                correctlySent: 'Well done! Your message has been sent',
+            }) :
+            this.setState({
+                correctlySent: 'Something went wront.. Try again later',
+            });
+    }
+
     render() {
         const { firstnameError, lastnameError, emailError, messageError, correctlySent } = this.state;
         return (
             <div className="row mt-5">
                 <div className="col-md-5 m-auto ">
                     <h1 className="mt-4">Please contact us, USERNAME</h1>
-
                     <form className='mt-5' onSubmit={this.handleSubmit}>
                         <h2 className='mb-4'>Contact form</h2>
                         <p>Firstname</p>
@@ -104,5 +102,4 @@ export default class Contact extends Component {
             </div>
         )
     }
-
 }

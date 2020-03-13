@@ -9,17 +9,15 @@ const CardClick = (props) => {
                 <div className="">
                     <h1 className='text-center mt-5'>{name}</h1>
                     <div className="d-flex justify-content-center">
-                    <img className="card-img-top col-md-5" src={image} alt={name} />
-                    <div className='mt-5'>
-                        <p><b>Gender:</b> {gender}</p>
-                        <p><b>Species:</b> {species}</p>
-                        <p><b>Status:</b> {status}</p>
-                        <p><b>Origin:</b> {origin}</p>
-                        <p><b>Date created:</b> {created}</p>
-
-
+                        <img className="card-img-top col-md-5" src={image} alt={name} />
+                        <div className='mt-5'>
+                            <p><b>Gender:</b> {gender}</p>
+                            <p><b>Species:</b> {species}</p>
+                            <p><b>Status:</b> {status}</p>
+                            <p><b>Origin:</b> {origin}</p>
+                            <p><b>Date created:</b> {created}</p>
+                        </div>
                     </div>
-</div>
                 </div>
             </div>
         </>
