@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
-//import axios from 'axios';
-//import { STRAPI_CONTACT_API } from '../Constants';
+import axios from 'axios';
+import { STRAPI_CONTACT_API } from './../components/constants/constants';
 /* import BlogPost from '../components/blog'; */
 
 
 
 export default class Contact extends Component {
-    /* state = {
+    state = {
         firstname: '',
-        surname: '',
+        lastname: '',
         email: '',
         message: '',
         firstnameError: true,
-        surnameError: true,
+        lastnameError: true,
         emailError: true,
         messageError: true,
 
-        userName: window.sessionStorage.getItem("user"),
         correctlySent: '',
-        showMore: false,
+
 
     }
 
@@ -31,8 +30,8 @@ export default class Contact extends Component {
             case 'firstname':
                 (value !== '') ? this.setState({ firstnameError: false }) : this.setState({ firstnameError: true })
                 break;
-            case 'surname':
-                (value !== '') ? this.setState({ surnameError: false }) : this.setState({ surnameError: true })
+            case 'lastname':
+                (value !== '') ? this.setState({ lastnameError: false }) : this.setState({ lastnameError: true })
                 break;
             case 'email':
                 (emailPattern.test(value)) ? this.setState({ emailError: false }) : this.setState({ emailError: true })
@@ -47,73 +46,75 @@ export default class Contact extends Component {
             [name]: value
         })
     }
-
-    handleSubmit = (event) => {
-        event.preventDefault();
-        const {firstname, surname, email, message} = this.state;
-        axios.post(STRAPI_CONTACT_API, {
-            name: firstname,
-            surname: surname,
-            email: email,
-            message: message
-        })
-        .then(result => {
-            console.log(result);
-            this.setState({
-                correctlySent: 'Well done! Your message has been sent',
-            })
-        })
-        .catch(err => {
-            console.log(err);
-            this.setState({
-                correctlySent: 'Well fuck.. Something is not right',
-            })
-        })
-    }
-
-    handleClick = () => {
-        this.setState({
-            showMore: true,
-        })
-    }
-    handleSecondClick = () => {
-        this.setState({
-            showMore: false,
-        })
-    } */
+    
+     handleSubmit = (event) => {
+         event.preventDefault();
+         const {firstname, lastname, email, message} = this.state;
+         axios.post(STRAPI_CONTACT_API, {
+             name: firstname,
+             lastname: lastname,
+             email: email,
+             message: message
+         })
+         .then(result => {
+             console.log(result);
+             this.setState({
+                 correctlySent: 'Well done! Your message has been sent',
+             })
+         })
+         .catch(err => {
+             console.log(err);
+             this.setState({
+                 correctlySent: 'Well fuck.. Something is not right',
+             })
+         })
+     }
+ 
     render() {
-       // const { firstnameError, surnameError, emailError, messageError, userName, correctlySent, showMore} = this.state;
+        const { firstnameError, lastnameError, emailError, messageError, userName, correctlySent } = this.state;
         return (
             <div className="row mt-5">
                 <div className="col-md-5 m-auto ">
                     <h1 className="mt-4">Please contact us, USERNAME</h1>
 
-                    <form className='mt-5'>
-                    <h2>Contact form</h2>
-                        <p>Enter your firstname</p>
+                    <form className='mt-5' onSubmit={this.handleSubmit}>
+                        <h2 className='mb-4'>Contact form</h2>
+                        <p>Firstname</p>
                         <input type="text"
                             name="firstname"
                             className="form-control"
+                            onChange={this.handleChange}
                         />
+                        <p className={(firstnameError) ? 'error' : 'd-none'}>Please enter firstname</p>
                         <br />
-                        <p>Enter your surname</p>
+                        <p>Lastname</p>
                         <input type="text"
-                            name="surname"
+                            name="lastname"
                             className="form-control"
+                            onChange={this.handleChange}
                         />
+                        <p className={(lastnameError) ? 'error' : 'd-none'}>Please enter lastname</p>
+
                         <br />
-                        <p>Enter your Email</p>
+                        <p>Email</p>
                         <input type="text"
                             name="email"
                             className="form-control"
+                            onChange={this.handleChange}
                         />
+                        <p className={(emailError) ? 'error' : 'd-none'}>Please enter a valid email</p>
+
                         <br />
-                        <p>Enter your message</p>
+                        <p>Message</p>
                         <input type="text"
                             name="message"
                             className="form-control"
+                            onChange={this.handleChange}
                         />
+                        <p className={(messageError) ? 'error' : 'd-none'}>Please enter a message</p>
                         <br />
+                        <p>{correctlySent}</p>
+                        <input type="submit" disabled={firstnameError || lastnameError || emailError || messageError || correctlySent} className='btn btn-primary' />
                     </form>
                 </div>
             </div>
