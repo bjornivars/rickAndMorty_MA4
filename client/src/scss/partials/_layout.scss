@@ -1,3 +1,4 @@
+
 .heading{
     margin-top: 4em;
     text-align: center;
@@ -43,4 +44,9 @@ a{
     &:hover{
         color: white;
     }
+}
+
+.otherContact{
+    display: flex;
+    justify-content: center;
 }

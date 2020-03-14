@@ -4,7 +4,7 @@ import {
     BrowserRouter as Router,
     Switch,
     Route
-} from "react-router-dom";
+} from 'react-router-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
@@ -17,10 +17,10 @@ ReactDOM.render(
     <Router>
         <App>
             <Switch>
-                <Route path="/" exact component={Dashboard} />
-                <Route path="/contact/" exact component={Contact} />
-                <Route path="/about/" exact component={About} />
-                <Route path="/card-specific/:id/" exact component={CardSpecific} />
+                <Route path='/' exact component={Dashboard} />
+                <Route path='/contact/' exact component={Contact} />
+                <Route path='/about/' exact component={About} />
+                <Route path='/card-specific/:id/' exact component={CardSpecific} />
             </Switch>
         </App>
     </Router>,

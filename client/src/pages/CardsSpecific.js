@@ -29,11 +29,11 @@ export default class CardSpecific extends Component {
         const { characterResult } = this.state;
         return (
             <div>
-                <div className="row">
-                    <div className="col-sm-12">
-                        <h1 className="heading">Card Specific</h1>
+                <div className='row'>
+                    <div className='col-sm-12'>
+                        <h1 className='heading'>Card Specific</h1>
                     </div>
-                    <div className="col-sm-12">
+                    <div className='col-sm-12'>
                         {
                             (characterResult !== undefined) ?
                                 <CardClick
@@ -45,8 +45,8 @@ export default class CardSpecific extends Component {
                                     origin={characterResult.origin.name}
                                     created={characterResult.created}
                                 /> :
-                                <div className="d-flex justify-content-center col-md-6">
-                                    <img className='w-100' src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' alt="loading" />
+                                <div className='d-flex justify-content-center col-md-6'>
+                                    <img className='w-100' src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' alt='loading' />
                                 </div>
                         }
                     </div>

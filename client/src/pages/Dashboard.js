@@ -12,8 +12,8 @@ export default class Dashboard extends react.Component {
     filteredResults: [],
     isResultsFiltered: false,
     searchPhrase: '',
-    
-    userName: window.sessionStorage.getItem("user"),
+
+    userName: window.sessionStorage.getItem('user'),
   }
 
   componentDidMount() {
@@ -41,23 +41,23 @@ export default class Dashboard extends react.Component {
   render() {
     const { allResults, filteredResults, searchPhrase, isResultsFiltered, userName } = this.state;
     return (
-      <div className="Component">
-        <h1 className="heading">Welcome back, {userName}</h1>
+      <div className='Component'>
+        <h1 className='heading'>Welcome back, {userName}</h1>
         <form className='col-md-6 m-auto'>
           <p className='mt-5'>Search for a Character</p>
           <input type='text'
             name='username'
             onChange={this.handleFiltering}
-            className="form-control"
+            className='form-control'
           />
           <br />
           <br />
         </form>
-        <div className="d-flex justify-content-between noWrap">
+        <div className='d-flex justify-content-between noWrap'>
           {
             (isResultsFiltered) ?
-              <div className="col-md-12 ">
-                <h1>Results for "{searchPhrase}"</h1>
+              <div className='col-md-12 '>
+                <h1>Results for '{searchPhrase}'</h1>
                 <div className='d-flex justify-content-start noWrap'>
                   {
                     (filteredResults.length > 0) ?
@@ -85,8 +85,8 @@ export default class Dashboard extends react.Component {
                         id={value.id}
                       />
                     }) :
-                    <div className="d-flex justify-content-center col-md-3">
-                      <img src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' alt="loading" />
+                    <div className='d-flex justify-content-center col-md-3'>
+                      <img src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' alt='loading' />
                     </div>
                 } </>
           }

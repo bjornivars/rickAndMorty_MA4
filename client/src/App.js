@@ -31,9 +31,9 @@ export default class App extends Component {
   render() {
     return (sessionStorage.getItem('user') !== null && this.state.isLoggedIn) ? 
     ( 
-      <div className="App">
+      <div className='App'>
         <Navbar />   
-        <button className="btn btn-primary fixed-top btn-logout" onClick={this.logoutUser}>
+        <button className='btn btn-primary fixed-top btn-logout' onClick={this.logoutUser}>
         <Link to={'/'}>Log out</Link> 
         </button>
           {this.props.children}

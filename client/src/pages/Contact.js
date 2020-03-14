@@ -14,7 +14,7 @@ export default class Contact extends Component {
 
         correctlySent: '',
 
-        userName: window.sessionStorage.getItem("user"),
+        userName: window.sessionStorage.getItem('user'),
 
     }
 
@@ -59,47 +59,47 @@ export default class Contact extends Component {
     render() {
         const { firstnameError, lastnameError, emailError, messageError, correctlySent, userName } = this.state;
         return (
-            <div className="row mt-5">
-                <div className="col-md-5 m-auto ">
-                    <h1 className="heading">Please contact us, {userName}</h1>
+            <div className='row mt-5'>
+                <div className='col-md-5 m-auto '>
+                    <h1 className='heading'>Please contact us, {userName}</h1>
                     <form className='mt-5' onSubmit={this.handleSubmit}>
                         <h2 className='mb-4'>Contact form</h2>
                         <p>Firstname</p>
-                        <input type="text"
-                            name="firstname"
-                            className="form-control"
+                        <input type='text'
+                            name='firstname'
+                            className='form-control'
                             onChange={this.handleChange}
                         />
                         <p className={(firstnameError) ? 'error' : 'd-none'}>Please enter firstname</p>
                         <br />
                         <p>Lastname</p>
-                        <input type="text"
-                            name="lastname"
-                            className="form-control"
+                        <input type='text'
+                            name='lastname'
+                            className='form-control'
                             onChange={this.handleChange}
                         />
                         <p className={(lastnameError) ? 'error' : 'd-none'}>Please enter lastname</p>
 
                         <br />
                         <p>Email</p>
-                        <input type="text"
-                            name="email"
-                            className="form-control"
+                        <input type='text'
+                            name='email'
+                            className='form-control'
                             onChange={this.handleChange}
                         />
                         <p className={(emailError) ? 'error' : 'd-none'}>Please enter a valid email</p>
 
                         <br />
                         <p>Message</p>
-                        <input type="text"
-                            name="message"
-                            className="form-control"
+                        <input type='text'
+                            name='message'
+                            className='form-control'
                             onChange={this.handleChange}
                         />
                         <p className={(messageError) ? 'error' : 'd-none'}>Please enter a message</p>
                         <br />
                         <p>{correctlySent}</p>
-                        <input type="submit" disabled={firstnameError || lastnameError || emailError || messageError || correctlySent} className='btn btn-primary' />
+                        <input type='submit' disabled={firstnameError || lastnameError || emailError || messageError || correctlySent} className='btn btn-primary' />
                     </form>
                 </div>
             </div>

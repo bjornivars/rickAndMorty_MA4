@@ -46,7 +46,7 @@ export default class Login extends Component {
         const { errorMessage } = this.state;
         return (
             <div className="container-fluid">
-                <h1 className="text-center pt-8 mb-5">Login</h1>
+                <h1 className="text-center mb-5 mt-5 pt-5">Login</h1>
                 <div className="row m-auto">
                     <form onSubmit={this.handleSubmit} className="col-md-4 m-auto">
                         {
