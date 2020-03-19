@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Cards = (props) => {
-    console.log('test navbar');
-    const { image, name, species, id, gender } = props;
+const Cards = ({image, name, species, id, gender}) => {
+    //console.log('test navbar');
     return (
         <div className='col-md-3 mt-4 mb-4 rmCard'>
             <div className='card'>

@@ -8,7 +8,7 @@ import {
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import Dashboard from './pages/Dashboard';
+import DashBoard from './pages/Dashboard';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import CardSpecific from './pages/CardsSpecific';
@@ -17,7 +17,7 @@ ReactDOM.render(
     <Router>
         <App>
             <Switch>
-                <Route path='/' exact component={Dashboard} />
+                <Route path='/' exact component={DashBoard} />
                 <Route path='/contact/' exact component={Contact} />
                 <Route path='/about/' exact component={About} />
                 <Route path='/card-specific/:id/' exact component={CardSpecific} />
