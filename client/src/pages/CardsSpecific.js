@@ -1,4 +1,6 @@
+import { useParams} from "react-router";
 import React, { useState, useEffect } from 'react';
+
 
 import axios from 'axios';
 import { RM_API,
@@ -8,13 +10,14 @@ import { Link } from 'react-router-dom';
 import CardClick from '../components/card-specific';
 
 export default function CardSpecific() {
-    const [characterId, setCharacterId] = useState(this.props.match.params.id)
+    let { id } = useParams();
     const [characterResult, setCharacterResult] = useState(undefined);
 
+    console.log(id)
     useEffect(() => {
-        axios.get(HEROKU_BYPASS_CORS + RM_API + characterId)
+        axios.get(HEROKU_BYPASS_CORS + RM_API + id)
             .then((result) => {
-                setCharacterResult(result.data.results);
+                setCharacterResult(result.data);
             })
     }, [])
 
