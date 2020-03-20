@@ -11,8 +11,6 @@ export default function DashBoard() {
   const [allResults, setAllResults] = useState(undefined);
   const [isResultsFiltered, setIsResultsFiltered] = useState(false);
   const [returnedFilteredCards, setReturnedFilteredCards] = useState([]);
-  const [userName, setUserName] = useState(window.sessionStorage.getItem('user'));
-  //const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     axios.get(HEROKU_BYPASS_CORS + RM_API)
@@ -32,7 +30,7 @@ export default function DashBoard() {
   console.log("Filtered", returnedFilteredCards);
   return (
     <div className='Component'>
-      <h1 className='heading'>Welcome back, {userName}</h1>
+      <h1 className='heading'>Welcome back</h1>
       <form className='col-md-6 m-auto'>
         <p className='mt-5'>Search for a Character</p>
         <input type='text'

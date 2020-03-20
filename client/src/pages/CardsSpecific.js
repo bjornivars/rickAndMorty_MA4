@@ -13,15 +13,12 @@ export default function CardSpecific() {
     let { id } = useParams();
     const [characterResult, setCharacterResult] = useState(undefined);
 
-    console.log(id)
     useEffect(() => {
         axios.get(HEROKU_BYPASS_CORS + RM_API + id)
             .then((result) => {
                 setCharacterResult(result.data);
             })
-    }, [])
-
-
+    }, [id])
 
     return (
         <div>
