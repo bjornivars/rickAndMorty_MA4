@@ -1,5 +1,4 @@
-import { useRouteMatch} from "react-router";
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/styles.scss';
 import Navbar from './components/navbar';
