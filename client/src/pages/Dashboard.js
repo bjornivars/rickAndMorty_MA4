@@ -29,7 +29,7 @@ export default function DashBoard() {
     })
     setReturnedFilteredCards(setFilteredCards);
   }
-console.log("Filtered" , returnedFilteredCards);
+  console.log("Filtered", returnedFilteredCards);
   return (
     <div className='Component'>
       <h1 className='heading'>Welcome back, {userName}</h1>
@@ -45,39 +45,39 @@ console.log("Filtered" , returnedFilteredCards);
       </form>
       <div className='d-flex justify-content-between noWrap'>
         {
-                (!isResultsFiltered) ?
-                <> {
-                  (allResults !== undefined) ?
-                    allResults.map((value, index) => {
-                      return <Cards key={index}
-                        name={value.name}
-                        image={value.image}
-                        species={value.species}
-                        gender={value.gender}
-                        id={value.id}
-                      />
-                    }) :
-                    <div className='d-flex justify-content-center col-md-3'>
-                      <img src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' alt='loading' />
-                    </div>
-                }
-                </> : <> 
-                  {
-                    (returnedFilteredCards !== undefined) ?
-                      returnedFilteredCards.map((value, index) => {
-                        return <Cards key={index}
-                          name={value.name}
-                          image={value.image}
-                          species={value.species}
-                          gender={value.gender}
-                          id={value.id}
-                        />
-                      }) :                  
-                    <div className='d-flex justify-content-center col-md-3'>
-                      <img src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' alt='loading' />
-                    </div>
-                  }
-                </>
+          (!isResultsFiltered) ?
+            <> {
+              (allResults !== undefined) ?
+                allResults.map((value, index) => {
+                  return <Cards key={index}
+                    name={value.name}
+                    image={value.image}
+                    species={value.species}
+                    gender={value.gender}
+                    id={value.id}
+                  />
+                }) :
+                <div className='d-flex justify-content-center col-md-3'>
+                  <img src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' alt='loading' />
+                </div>
+            }
+            </> : <>
+              {
+                (returnedFilteredCards !== undefined) ?
+                  returnedFilteredCards.map((value, index) => {
+                    return <Cards key={index}
+                      name={value.name}
+                      image={value.image}
+                      species={value.species}
+                      gender={value.gender}
+                      id={value.id}
+                    />
+                  }) :
+                  <div className='d-flex justify-content-center col-md-3'>
+                    <img src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' alt='loading' />
+                  </div>
+              }
+            </>
         }
       </div>
     </div>

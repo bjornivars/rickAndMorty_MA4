@@ -1,11 +1,11 @@
-import { useParams} from "react-router";
+import { useParams } from "react-router";
 import React, { useState, useEffect } from 'react';
 
-
 import axios from 'axios';
-import { RM_API,
-         HEROKU_BYPASS_CORS
-         } from './../components/constants/constants';
+import {
+    RM_API,
+    HEROKU_BYPASS_CORS
+} from './../components/constants/constants';
 import { Link } from 'react-router-dom';
 import CardClick from '../components/card-specific';
 
