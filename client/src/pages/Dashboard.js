@@ -27,7 +27,7 @@ export default function DashBoard() {
     })
     setReturnedFilteredCards(setFilteredCards);
   }
-  console.log("Filtered", returnedFilteredCards);
+  // console.log("Filtered", returnedFilteredCards);
   return (
     <div className='Component'>
       <h1 className='heading'>Welcome back</h1>
